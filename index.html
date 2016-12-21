@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Basic Page Needs
+  ------------------------------------ -->
+  <meta charset="utf-8">
+  <title>Wojtek Kurbiel - JavaScript Developer</title>
+  <meta name="description" content="Wojtek Kurbiel - Portfolio Page">
+  <meta name="author" content="Wojtek Kurbiel">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+  <!-- Mobile Specific Metas
+  ------------------------------------ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Font
+  ------------------------------------ -->
+  <link href='https://fonts.googleapis.com/css?family=Amatica+SC:400,700 & subset=latin,latin-ext' rel="stylesheet" type="text/css">
+
+  <!-- Particles Effect
+  ------------------------------------ -->
+  <script src="particles/particles.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="particles/particlesStyle.css">
+
+  <!-- Linked Files
+  ------------------------------------ -->
+  <link rel="stylesheet" type="text/css" href="main01.css">
+  <!-- Devicons
+  ------------------------------------ -->
+  <link href='devicons-master/css/devicons.min.css' type="text/css" rel='stylesheet'>
+</head>
+<body>
+	<div id="particles-js"></div>
+	<nav>
+			<div class="hamburger-btn" id="hambtn">
+        		<span class="hamburger-bars" id="bars"></span>
+        		<span id="hambtnX"></span>
+     		</div> 
+			<ul class="btnsbar" id="dropmenu">
+				<li><a href="#home">home</a></li>
+				<li><a href="#about">about</a></li>
+				<li><a href="#portfolio">portfolio</a></li>
+				<li><a href="#contact">contact</a></li>
+			</ul>
+	</nav>
+	<header>		
+			<h1 class="developer">front-end developer</h1>
+			<h1 class="programmer">javascript programmer</h1>
+			<h1 class="name">Wojciech Kurbiel</h1>
+	</header>
+		<div class="container">
+		  <img src="images/main_picture_a_500px.png" alt="me with my son">
+		</div>
+	<aside class="famous-quote">
+		<blockquote>
+			<p>The computer programmer is a creator of universes for which he alone is responsible. Universes of virtually unlimited complexity can be created in the form of computer programs.</p>
+      		<cite class="author">— Joseph Weizenbaum, <a class="author" href="https://en.wikipedia.org/wiki/Computer_Power_and_Human_Reason">Computer Power and Human Reason</a></cite>
+		</blockquote>
+	</aside>
+	<section class="skills">
+		<h1>Technology I'm using</h1>
+		<h2 title="JavaScript"><span class="devicons devicons-javascript"></span><br><span class="skill-title"></span></h2>
+		<h2><span class="devicons devicons-html5" title="HTML5"></span></h2>
+		<h2><span class="devicons devicons-css3" title="CSS3"></span></h2>
+		<h2><span class="devicons devicons-git" title="Git"></span></h2>
+		<h2><span class="devicons devicons-github" title="GitHub"></span></h2>
+		<h2><span class="devicons devicons-npm" title="npm"></span></h2>
+		<h1>...and I'm learning</h1>
+		<h2><span class="devicons devicons-nodejs" title="Node.js"></span></h2>
+		<h2><span class="devicons devicons-jquery" title="jQuery"></span></h2>
+		<h2><span class="devicons devicons-bootstrap" title="Bootstrap"></span></h2>
+		<!-- <h2><span class="devicons devicons-sass"></span></h2> -->
+
+
+	</section>
+	<section class="contact">
+		<h1>Contact</h1>
+		<!-- <p>Get in touch if you want to hire me.</p> -->
+		<div class="container">
+			<h2>Mobile</h2> <h3>48 786 275 340</h3><br>
+			<h2>Email</h2> <h3>oxdecor@gmail.com</h3>
+		</div>
+		<form id="myForm">
+			<fieldset>
+				<legend>Send me a message</legend>
+				<label for="name">Name: </label>
+    			<input type="text" id="name" required name="name"><br>
+    			<label for="email">Email: </label>
+    			<input type="email" id="email" required name="email"><br>
+    			<label for="msg">Your text: </label>
+    			<textarea type="text-field" id="msg" required name="msg"></textarea><br>
+			</fieldset>
+			<button>Submit</button>
+		</form>
+
+	</section>
+	<footer><p>&copy design and programming Wojciech Kurbiel 2016</p></footer>
+	<script src="main.js"></script>
+	<script src="particles/myParticlesApp.js"></script>
+	<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+	<script>
+    window.sr = ScrollReveal();
+    sr.reveal('.developer', {
+        reset: false,
+        delay: 100,
+        duration: 1500,
+        distance: '0px',
+        scale: 1,
+        easing: 'ease-in'
+    });
+    sr.reveal('.programmer', {
+        reset: false,
+        delay: 1500,
+        duration: 1500,
+        distance: '0px',
+        scale: 1,
+        easing: 'ease-in'
+    });
+    sr.reveal('.name', {
+        reset: false,
+        delay: 3000,
+        duration: 1500,
+        distance: '5px',
+        easing: 'ease-in'
+    });
+    sr.reveal('aside p, .author', {
+        reset: false,
+        delay: 0,
+        scale: 1,
+        distance: '0px',
+        easing: 'ease-in',
+        duration: 1000
+    });
+</script>
+</body>
+</html>
