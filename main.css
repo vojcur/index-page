@@ -1,0 +1,321 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Amatica SC", cursive;
+	text-align: center;
+	/*background-color: #bbb;*/
+	/*border:1px solid white;*/
+}
+/*
+================================
+         Hamburger Button
+================================
+*/
+.hamburger-btn {
+	margin: 0 auto;
+	width:44px;
+  	height: 36px;
+  	border-radius:5px;
+  	/*box-shadow:-1px 2px 6px #333;*/
+}
+.hamburger-btn:hover {
+	/*border:1px solid white;*/
+	background-color: #999;
+	cursor:pointer;
+  	/*box-shadow:1px 2px 0px #aaa;*/
+	
+}
+.hamburger-bars {
+	display:block;
+	color:white;
+	position:relative;
+  	margin:0 auto;
+  	top: 10px;
+  	width:30px;
+  	height:14px;
+  	border-top:5px solid rgba(0,0,0,0);
+  	border-bottom:5px solid rgba(0,0,0,0);
+  	box-shadow:inset 0 4px, 0 -4px, 0 4px;
+  	color:#eee; 	
+}
+#hambtnX {
+  display:none;
+  background:white;
+  height:28px;
+  position:relative;
+  left:19px;
+  top:3px;
+  width: 5px;
+  transform:rotate(45deg);
+}
+#hambtnX:after {
+  background: white;
+  content: "";
+  height: 5px;
+  left: -11px;
+  position: absolute;
+  top: 11px;
+  width: 28px;
+}
+.logo {
+	position: absolute;
+	left: 5%;
+	bottom: 20px;
+}
+.container {
+	/*float:left;*/
+	width: 100%;
+}
+/*
+=================================
+           Navigation
+=================================
+*/
+nav {
+	position: fixed;
+	top:0;
+	width: 100%;
+	height: 70px;
+	padding: 17px;
+	background: rgba(93,88,85,.8); 
+	/*background-color: #777;*/
+	z-index: 9;
+}
+nav ul {
+	text-decoration: none;
+	list-style: none;
+	/*visibility: hidden;*/
+	display: none;
+}
+nav a {
+	color:white;
+	font-size: 1.5em;
+}
+/*
+=================================
+           Header
+=================================
+*/
+header {
+	position: relative;
+	/*top: -310px;*/
+	margin: 15px auto;
+	padding: 40px;
+	max-width:450px;
+	/*border: 2px solid pink;*/
+}
+hgroup {
+	/*margin-top: 50px;
+	margin-bottom: 15px;*/
+	letter-spacing: 1px;
+	/*border:1px solid pink;*/
+}
+h1 {
+	font-size: 3.2em;
+	color: #444;
+}
+.name {
+	margin-top: 18px;
+	display: inline-block;
+	font-size: 3.2em;
+	letter-spacing: 1px;
+	color: #fff;
+	background-color: #444;
+  	/*box-shadow:-1px 1px 15px #777;*/
+	padding: 5px 20px 10px;
+
+}
+/*h2::before {
+	content: url('images/biel_logo_x50.png');
+	position: absolute;
+	width:70px;
+	top: 10px;
+	right: 275px;
+}*/
+h2 {
+	margin-top: 18px;
+	display: inline-block;
+	font-size: 3.2em;
+	letter-spacing: 1px;
+	color: #fff;
+	background-color: #444;
+  	box-shadow:-1px 1px 15px #777;
+	padding: 5px 20px 10px;
+}
+img {
+	position: relative;
+	top: 5px;
+	/*top: -300px;*/
+}
+/*
+   =============================
+            Quotation
+   =============================
+*/
+blockquote {
+	position: relative;
+	/*top: -305px;*/
+	/*top: -5px;*/
+	width: 500px;
+	margin: 0 auto;
+	padding: 45px 40px;
+	color: #eee;
+	background-color: gray;
+	
+	font-size: 3em;
+	letter-spacing:normal;
+    font-family:sans-serif;
+    font-style:oblique;
+	z-index: 3;
+}
+blockquote p:before {
+	content: open-quote;
+}
+blockquote p:after {
+	content: close-quote;
+}
+.author {
+	font-family: sans-serif;
+	font-size: 0.6em;
+	text-decoration: none;
+	color: white;
+}
+section {
+	position: relative;
+	/*top: -305px;*/
+	width: 500px;
+	/*height: 550px;*/
+	margin: 0 auto;
+	padding: 45px 40px;
+	padding-bottom: 60px;
+	color: #eee;
+}
+/*
+   ==============================
+              Skills
+   ==============================
+*/
+.skills {
+	background-color: rgba(162, 182, 209, 0.5);
+	/*background-image: url(images/pattern_01.png);*/
+}
+.skill-title {
+	font-family: sans-serif;
+	font-size: 10px;
+}
+.skills h1 {
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+.skills h2 {
+	font-size: 6em;
+	position: relative;
+	top: 5px;
+}
+.dev-icons {
+	font-family: "devicons";
+}
+/*
+   ==============================
+              Contact
+   ==============================
+*/
+
+.contact {
+	/*background-color: gray;*/
+	background: rgba(93,88,85,.5); 
+	/*background-color: rgba(238, 224, 198, 0.5);*/
+}
+.contact h1 {
+	margin-bottom: 35px;
+}
+.contact .container {
+	text-align: left;
+	margin-top: 30px;
+	padding: 10px 15px;
+	/*background-color: #585858;*/
+	/*background-color: #555;*/
+	border:1px solid white;
+}
+.contact h2 {
+	/*color: #585858;*/
+	display: inline-block;
+	width: 6em;
+	color: #555;
+	background-color: initial;
+	box-shadow: initial;
+	font-family: sans-serif;
+	font-size: 1.4em;
+	/*text-align: right;*/
+	margin:0;
+	/*margin-bottom: 30px*/
+}
+/*h2:last-child {
+	margin-bottom: 50px;
+}*/
+.contact .container {
+	margin-bottom: 50px;
+}
+.contact h3 {
+	display: inline-block;
+	position: relative;
+	font-family:sans-serif;
+	text-align: left;
+	font-size: 1.4em;
+	left: 17px;
+}
+fieldset {
+	padding: 20px;
+}
+label {
+	display: inline-block;
+	width: 110px;
+	text-align: left;
+}
+input {
+	position: relative;
+	left: -30px;
+	margin-left: 1px;
+	margin-right: 0;
+	width: 12em;
+	font-size: 0.7em;
+	text-align: left;
+}
+#myForm label, legend, input, textarea, button{
+	color: #333;
+	font-size: 1.4em;
+	font-family:sans-serif;
+	margin-bottom: 10px;
+}
+input, textarea {
+	box-sizing: border-box;
+}
+textarea {
+	vertical-align: top;
+	height: 5em;
+	text-align: left;
+	resize: vertical
+}
+#myForm button {
+	position: relative;
+	margin-top: 20px;
+	width: 5em;
+	height: 3em;
+}
+/*
+   ==============================
+               Footer
+   ==============================
+*/
+footer {
+	position: relative;
+	/*bottom: 305px;*/
+	bottom: 0;
+	width:100%;
+	height: 70px;
+	background: rgba(93,88,85,.9);
+	padding: 15px;
+	font-size: 2em;
+	color: white;
+}
