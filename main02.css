@@ -1,0 +1,250 @@
+/*
+================================
+         Hamburger Button
+================================
+*/
+@import 'hamburger-button.css';
+/*
+================================
+         General Setup
+================================
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Amatica SC", cursive;
+  text-align: center;
+}
+section {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 45px 40px;
+  padding-bottom: 60px;
+  color: #eee;
+}
+/*
+=================================
+           Navigation
+=================================
+*/
+nav {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 70px;
+  padding: 17px;
+  background: rgba(93,88,85,.8); 
+  z-index: 9;
+}
+nav ul {
+  text-decoration: none;
+  list-style: none;
+  /*visibility: hidden;*/
+  display: none;
+}
+nav a {
+  color:white;
+  font-size: 1.5em;
+}
+/*
+=================================
+           Header
+=================================
+*/
+header {
+  position: relative;
+  top:-40px;
+  margin: 0px auto;
+  padding: 80px;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  width:100%;
+  /*background: rgba(230,230,230,.4); */
+  /*border: 1px solid black;*/
+}
+h1 {
+  font-size: 3.2em;
+  color: #444;
+}
+.name {
+  margin-top: 18px;
+  display: inline-block;
+  font-size: 3.2em;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  padding: 5px 20px 10px;
+
+}
+h2 {
+  margin-top: 18px;
+  display: inline-block;
+  font-size: 3.2em;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+    box-shadow:-1px 1px 15px #777;
+  padding: 5px 20px 10px;
+}
+img {
+  position: relative;
+  top: 0px;
+  border: 1px solid pink;
+}
+/*
+   =============================
+            Quotation
+   =============================
+*/
+blockquote {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 45px 40px;
+  color: #eee;
+  background-color: gray;
+  font-size: 3em;
+  letter-spacing:normal;
+    font-family:sans-serif;
+    font-style:oblique;
+  z-index: 3;
+}
+blockquote p:before {
+  content: open-quote;
+}
+blockquote p:after {
+  content: close-quote;
+}
+.author {
+  font-family: sans-serif;
+  font-size: 0.6em;
+  text-decoration: none;
+  color: white;
+}
+/*
+   ==============================
+              Skills
+   ==============================
+*/
+.skills {
+  background-color: rgba(162, 182, 209, 0.5);
+}
+.skill-title {
+  font-family: sans-serif;
+  font-size: 10px;
+}
+.skills h1 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.skills h2 {
+  font-size: 6em;
+  position: relative;
+  top: 5px;
+}
+.dev-icons {
+  font-family: "devicons";
+}
+/*
+   ==============================
+              Contact
+   ==============================
+*/
+.contact {
+  background: rgba(93,88,85,.5); 
+  background: rgba(230,230,230,.4); 
+
+}
+.contact h1 {
+  margin-bottom: 35px;
+}
+.contact .container {
+  text-align: left;
+  margin-top: 30px;
+  padding: 10px 15px;
+  /*border:1px solid white;*/
+}
+.contact h2 {
+  display: inline-block;
+  width: 6em;
+  color: #333;
+  background-color: initial;
+  box-shadow: initial;
+  font-family: sans-serif;
+  font-size: 1.4em;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  margin:0;
+}
+.contact .container {
+  margin-bottom: 50px;
+}
+.contact h3 {
+  display: inline-block;
+  position: relative;
+  font-family: sans-serif;
+  text-align: left;
+  font-size: 1.4em;
+  font-weight: normal;
+  left: 17px;
+  /*background: rgba(3,3,3,.7); */
+  color: #333;
+  padding: 3px 5px;
+  /*border: 1px solid rgba(3,3,3,.7);*/
+}
+fieldset {
+  padding: 20px;
+}
+label {
+  display: inline-block;
+  width: 110px;
+  text-align: left;
+}
+input {
+  position: relative;
+  left: -30px;
+  margin-left: 1px;
+  margin-right: 0;
+  width: 12em;
+  font-size: 0.7em;
+  text-align: left;
+}
+#myForm label, legend, input, textarea, button {
+  color: #333;
+  font-size: 1.4em;
+  font-family:sans-serif;
+  margin-bottom: 10px;
+}
+input, textarea {
+  box-sizing: border-box;
+}
+textarea {
+  vertical-align: top;
+  height: 5em;
+  text-align: left;
+  resize: vertical
+}
+#myForm button {
+  position: relative;
+  margin-top: 20px;
+  width: 5em;
+  height: 3em;
+}
+/*
+   ==============================
+               Footer
+   ==============================
+*/
+footer {
+  position: relative;
+  bottom: 0;
+  width:100%;
+  height: 70px;
+  background: rgba(93,88,85,.9);
+  padding: 15px;
+  font-size: 2em;
+  color: white;
+}
