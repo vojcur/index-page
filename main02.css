@@ -90,8 +90,8 @@ h2 {
 }
 img {
   position: relative;
-  top: 0px;
-  border: 1px solid pink;
+  top: 5px;
+  /*border: 1px solid pink;*/
 }
 /*
    =============================
@@ -105,7 +105,7 @@ blockquote {
   padding: 45px 40px;
   color: #eee;
   background-color: gray;
-  font-size: 3em;
+  font-size: 2.5em;
   letter-spacing:normal;
     font-family:sans-serif;
     font-style:oblique;
@@ -140,7 +140,7 @@ blockquote p:after {
   margin-bottom: 15px;
 }
 .skills h2 {
-  font-size: 6em;
+  font-size: 4em;
   position: relative;
   top: 5px;
 }
@@ -245,6 +245,6 @@ footer {
   height: 70px;
   background: rgba(93,88,85,.9);
   padding: 15px;
-  font-size: 2em;
+  font-size: 1.8em;
   color: white;
 }
