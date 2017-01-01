@@ -30,45 +30,49 @@
   <link href='devicons-master/css/devicons.min.css' type="text/css" rel='stylesheet'>
 </head>
 <body>
+  <h1>Portfolio Page</h1>
 	<div id="particles-js"></div>
+  <div id="main-container">
 	<nav>
 			<div class="hamburger-btn" id="hambtn">
         		<span class="hamburger-bars" id="bars"></span>
         		<span id="hambtnX"></span>
-     		</div> 
+     	</div> 
 			<ul class="btnsbar" id="dropmenu">
 				<li><a href="#home">home</a></li>
 				<li><a href="#about">about</a></li>
 				<li><a href="#portfolio">portfolio</a></li>
 				<li><a href="#contact">contact</a></li>
+        <li><a href="#credits">credits</a></li>
 			</ul>
 	</nav>
-	<header>		
+	<header>	
 			<h1 class="developer">front-end developer</h1>
 			<h1 class="programmer">javascript programmer</h1>
 			<h1 class="name">Wojciech Kurbiel</h1>
 	</header>
-		<div class="container">
+		<div class="container image-container">
 		  <img src="images/main_picture_a_500px.png" alt="me with my son">
 		</div>
 	<aside class="famous-quote">
+    <h1>Famous Quote</h1>
 		<blockquote>
 			<p>The computer programmer is a creator of universes for which he alone is responsible. Universes of virtually unlimited complexity can be created in the form of computer programs.</p>
-      		<cite class="author">— Joseph Weizenbaum, <a class="author" href="https://en.wikipedia.org/wiki/Computer_Power_and_Human_Reason">Computer Power and Human Reason</a></cite>
+      		<cite class="author">— Joseph Weizenbaum,<br> <a class="author" href="https://en.wikipedia.org/wiki/Computer_Power_and_Human_Reason">Computer Power and Human Reason</a></cite>
 		</blockquote>
 	</aside>
 	<section class="skills">
-		<h1>Technology I'm using</h1>
-		<h2 title="JavaScript"><span class="devicons devicons-javascript"></span><br><span class="skill-title"></span></h2>
-		<h2><span class="devicons devicons-html5" title="HTML5"></span></h2>
-		<h2><span class="devicons devicons-css3" title="CSS3"></span></h2>
-		<h2><span class="devicons devicons-git" title="Git"></span></h2>
-		<h2><span class="devicons devicons-github" title="GitHub"></span></h2>
-		<h2><span class="devicons devicons-npm" title="npm"></span></h2>
-		<h1>...and I'm learning</h1>
-		<h2><span class="devicons devicons-nodejs" title="Node.js"></span></h2>
-		<h2><span class="devicons devicons-jquery" title="jQuery"></span></h2>
-		<h2><span class="devicons devicons-bootstrap" title="Bootstrap"></span></h2>
+		<h1>Technology I use</h1>
+		<h2 title="JavaScript"><span class="devicons devicons-javascript"></span><br>JavaScript</h2>
+		<h2 title="HTML5"><span class="devicons devicons-html5"></span><br>html5</h2>
+		<h2 title="CSS3"><span class="devicons devicons-css3"></span><br>css3</h2>
+		<h2 title="Git"><span class="devicons devicons-git"></span><br>Git</h2>
+		<h2 title="GitHub"><span class="devicons devicons-github"></span><br>GitHub</h2>
+		<h2 title="npm"><span class="devicons devicons-npm"></span><br>npm</h2>
+		<h1>...and I learn</h1>
+		<h2 title="Node.js"><span class="devicons devicons-nodejs"></span><br>Node.js</h2>
+		<h2 title="jQuery"><span class="devicons devicons-jquery"></span><br>jQuery</h2>
+		<h2 title="Bootstrap"><span class="devicons devicons-bootstrap"></span><br>Bootstrap</h2>
 		<!-- <h2><span class="devicons devicons-sass"></span></h2> -->
 
 
@@ -80,21 +84,22 @@
 			<h2>Mobile</h2> <h3>48 786 275 340</h3><br>
 			<h2>Email</h2> <h3>oxdecor@gmail.com</h3>
 		</div>
-		<form id="myForm">
+		<form action="https://formspree.io/vojcur@gmail.com" method="POST" id="myForm">
 			<fieldset>
 				<legend>Send me a message</legend>
 				  <label for="name">Name: </label>
-    			<input type="text" id="name" required name="name"><br>
+    			<input type="text" name="name" id="name" required><br>
     			<label for="email">Email: </label>
-    			<input type="email" id="email" required name="email"><br>
+    			<input type="email" name="_replyto" id="email" required><br>
     			<label for="msg">Your text: </label>
-    			<textarea type="text-field" id="msg" required name="msg"></textarea><br>
+    			<textarea type="text-field"  name="body" id="msg" required></textarea><br>
 			</fieldset>
-			<button>Submit</button>
+			<button type="submit" value="Send">Submit</button>
 		</form>
 
 	</section>
 	<footer><p>&copy design and programming<br>Wojciech Kurbiel 2016</p></footer>
+  </div>
 	<script src="main.js"></script>
 	<script src="particles/myParticlesApp.js"></script>
 	<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
