@@ -9,12 +9,19 @@
          General Setup
 ================================
 */
+body>h1 {
+  display: none;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Amatica SC", cursive;
   text-align: center;
+}
+#main-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 section {
   position: relative;
@@ -33,9 +40,10 @@ nav {
   position: fixed;
   top:0;
   width: 100%;
+  max-width: 1000px;
   height: 70px;
   padding: 17px;
-  background: rgba(93,88,85,.8); 
+  background: rgba(93,88,85,0); 
   z-index: 9;
 }
 nav ul {
@@ -43,10 +51,12 @@ nav ul {
   list-style: none;
   /*visibility: hidden;*/
   display: none;
+  color: black;
 }
 nav a {
   color:white;
   font-size: 1.5em;
+  color: black;
 }
 /*
 =================================
@@ -61,6 +71,7 @@ header {
   /*padding-top: 60px;
   padding-bottom: 120px;*/
   width:100%;
+  height:40vh;
   /*background: rgba(230,230,230,.4); */
   /*border: 1px solid black;*/
 }
@@ -68,6 +79,9 @@ h1 {
   font-size: 3em;
   color: #444;
 }
+/*header h1:first-child {
+  display:  none;
+}*/
 .name {
   margin-top: 18px;
   display: inline-block;
@@ -99,6 +113,9 @@ img {
             Quotation
    =============================
 */
+aside>h1 {
+  display: none;
+}
 blockquote {
   position: relative;
   width: 100%;
@@ -118,11 +135,17 @@ blockquote p:before {
 blockquote p:after {
   content: close-quote;
 }
+cite {
+  color: #eee;
+  font-size: 0.6em;
+}
 .author {
   font-family: sans-serif;
-  font-size: 0.6em;
+}
+blockquote a {
+  font-size: 90%;
   text-decoration: none;
-  color: white;
+  color: #ddd;
 }
 /*
    ==============================
@@ -140,13 +163,19 @@ blockquote p:after {
   margin-top: 25px;
   margin-bottom: 15px;
 }
-.skills h2 {
-  font-size: 3.5em;
-  position: relative;
-  top: 5px;
-}
+
 .dev-icons {
   font-family: "devicons";
+}
+.skills h2 {
+  position: relative;
+  font-size: 240%;
+  /*color: pink;*/
+}
+.skills h2 span{
+  font-size: 3em;
+  position: relative;
+  top: 5px;
 }
 /*
    ==============================
@@ -254,3 +283,14 @@ footer {
   font-size: 1.8em;
   color: white;
 }
+
+/*@media (min-width: 1000px) {
+  header {
+    width: 50%;
+    float: right;
+  }
+  .image-container {
+    width: 50%;
+    float: right;
+  }   
+}*/
