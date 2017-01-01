@@ -169,11 +169,11 @@ blockquote a {
 }
 .skills h2 {
   position: relative;
-  font-size: 240%;
+  font-size: 220%;
   /*color: pink;*/
 }
 .skills h2 span{
-  font-size: 3em;
+  font-size: 2em;
   position: relative;
   top: 5px;
 }
