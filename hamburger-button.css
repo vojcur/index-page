@@ -1,16 +1,19 @@
 .hamburger-btn {
-  margin: 0 auto;
+  float: right;
+  margin-right: 7%;
+  /*margin: 0 auto;*/
   width:44px;
     height: 36px;
-    border-radius:5px;
+    border-radius:3px;
+    background-color: rgba(255, 255,255, .8);
 }
 .hamburger-btn:hover {
-  background-color: #999;
+  background-color: #dddddd;
   cursor:pointer;
 }
 .hamburger-bars {
   display:block;
-  color:white;
+  color:gray;
   position:relative;
     margin:0 auto;
     top: 10px;
@@ -19,11 +22,12 @@
     border-top:5px solid rgba(0,0,0,0);
     border-bottom:5px solid rgba(0,0,0,0);
     box-shadow:inset 0 4px, 0 -4px, 0 4px;
-    color:#eee;   
+    /*color:#eee;   */
+    /*background: rgba(93,88,85,.1); */
 }
 #hambtnX {
   display:none;
-  background:white;
+  background:gray;
   height:28px;
   position:relative;
   left:19px;
@@ -32,7 +36,7 @@
   transform:rotate(45deg);
 }
 #hambtnX:after {
-  background: white;
+  background: gray;
   content: "";
   height: 5px;
   left: -11px;
