@@ -262,6 +262,7 @@ input, textarea {
 textarea {
   vertical-align: top;
   height: 7em;
+  max-width: 20em;
   text-align: left;
   resize: vertical
 }
