@@ -2,31 +2,31 @@
 <html lang="en">
 <head>
 	<!-- Basic Page Needs
-  ------------------------------------ -->
+  ==================================== -->
   <meta charset="utf-8">
   <title>Wojtek Kurbiel - JavaScript Developer</title>
   <meta name="description" content="Wojtek Kurbiel - Portfolio Page">
   <meta name="author" content="Wojtek Kurbiel">
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <!-- <meta http-equiv="Content-type" content="text/html"> -->
 
   <!-- Mobile Specific Metas
-  ------------------------------------ -->
+  ==================================== -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--Font
-  ------------------------------------ -->
-  <link href='https://fonts.googleapis.com/css?family=Amatica+SC:400,700 & subset=latin,latin-ext' rel="stylesheet" type="text/css">
+  ==================================== -->
+  <link href="https://fonts.googleapis.com/css?family=Amatica+SC:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
   <!-- Particles Effect
-  ------------------------------------ -->
+  ==================================== -->
   <script src="particles/particles.min.js"></script>
   <link rel="stylesheet" type="text/css" href="particles/particlesStyle.css">
 
   <!-- Linked Files
-  ------------------------------------ -->
+  ==================================== -->
   <link rel="stylesheet" type="text/css" href="main02.css">
   <!-- Devicons
-  ------------------------------------ -->
+  ==================================== -->
   <link href='devicons-master/css/devicons.min.css' type="text/css" rel='stylesheet'>
 </head>
 <body>
@@ -87,23 +87,23 @@
 		<form action="https://formspree.io/vojcur@gmail.com" method="POST" id="myForm">
 			<fieldset>
 				<legend>Send me a message</legend>
-				  <label for="name">Name: </label>
-    			<input type="text" name="name" id="name" required><br>
-    			<label for="email">Email: </label>
-    			<input type="email" name="_replyto" id="email" required><br>
-    			<label for="msg">Your text: </label>
-    			<textarea type="text-field"  name="body" id="msg" required></textarea><br>
+				  <!-- <label for="name">Name: </label> -->
+    			<input type="text" name="name" id="name" placeholder="name:" required><br>
+    			<!-- <label for="email">Email: </label> -->
+    			<input type="email" name="_replyto" id="email" placeholder="e-mail:" required><br>
+    			<!-- <label for="msg">Your text: </label> -->
+    			<textarea name="body" id="msg" placeholder="write here:" required></textarea><br>
 			</fieldset>
 			<button type="submit" value="Send">Submit</button>
 		</form>
 
 	</section>
-	<footer><p>&copy design and programming<br>Wojciech Kurbiel 2016</p></footer>
+	<footer><p>&copy; design and programming<br>Wojciech Kurbiel 2016</p></footer>
   </div>
 	<script src="main.js"></script>
 	<script src="particles/myParticlesApp.js"></script>
 	<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
-	<!-- <script>
+	<script>
     window.sr = ScrollReveal();
     sr.reveal('.developer', {
         reset: false,
@@ -136,6 +136,6 @@
         easing: 'ease-in',
         duration: 1000
     });
-</script> -->
+</script>
 </body>
 </html>

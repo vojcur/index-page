@@ -18,6 +18,7 @@ body>h1 {
   box-sizing: border-box;
   font-family: "Amatica SC", cursive;
   text-align: center;
+  /*border: 1px solid green;*/
 }
 #main-container {
   max-width: 1000px;
@@ -89,7 +90,8 @@ h1 {
   font-size: 2.7em;
   letter-spacing: 1px;
   /*color: #fff;*/
-  background-color: rgba(237,237,237,.8);
+  /*background-color: rgba(237,237,237,.8);*/
+  background-color: #fff;
   padding: 5px 15px 10px;
   border-top: 2px solid #777;
   border-bottom: 5px solid #777;
@@ -238,14 +240,13 @@ label {
   display: inline-block;
   width: 80px;
   text-align: left;
-
 }
 input {
   position: relative;
   /*left: -30px;*/
   margin-left: 1px;
   margin-right: 0;
-  width: 10em;
+  max-width: 20em;
   font-size: 0.7em;
   text-align: left;
 }
@@ -260,7 +261,7 @@ input, textarea {
 }
 textarea {
   vertical-align: top;
-  height: 5em;
+  height: 7em;
   text-align: left;
   resize: vertical
 }
