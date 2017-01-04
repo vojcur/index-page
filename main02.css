@@ -200,16 +200,16 @@ blockquote a {
 }
 .contact .container {
   position: relative;
-  width: 27em;
+  width: 25em;
   text-align: left;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   margin-top: 30px;
-  padding: 10px 15px;
-  /*border:1px solid white;*/
+  padding: 10px 5px;
+  /*border:1px solid green;*/
 }
 .contact h2 {
   display: inline-block;
-  width: 5em;
+  width: 4.5em;
   color: #333;
   /*background-color: initial;*/
   background: rgba(230,230,230,.1);
@@ -282,12 +282,12 @@ textarea {
 }
 #myForm button {
   position: relative;
-  margin-top: 20px;
+  margin-top: 25px;
   width: 5em;
   height: 3em;
   /*#FF324A 
   #ADC7DA*/
-  background:#FF384E linear-gradient(hsla(0, 0%, 100%, .8), transparent);
+  background:#D68089 linear-gradient(hsla(0, 0%, 100%, .6), transparent);
   /*border: 1px solid rgba(0,0,0,.1);*/
   /*border-radius: 6px;*/
   /*box-shadow: 0 .05em .25em rgba(0,0,0,.5);*/
