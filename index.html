@@ -106,12 +106,13 @@
 	<script src="particles/myParticlesApp.js"></script>
 	<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
 	<script>
+   window.onload = function(e){
     window.sr = ScrollReveal();
     sr.reveal('.developer', {
         origin: 'left',
         reset: false,
         delay: 100,
-        duration: 1000,
+        duration: 800,
         distance: '-250px',
         scale: 1,
         easing: 'ease-in-out'
@@ -119,15 +120,15 @@
     sr.reveal('.programmer', {
         origin: 'right',
         reset: false,
-        delay: 1200,
-        duration: 1000,
+        delay: 300,
+        duration: 800,
         distance: '-250px',
         scale: 1,
         easing: 'ease-in-out'
     });
     sr.reveal('.name', {
         reset: false,
-        delay: 2200,
+        delay: 1000,
         duration: 1000,
         rotate: {x: 180, y: 0, z: 0},
         distance: '5px',
@@ -166,7 +167,7 @@
     });
     sr.reveal('#css3', {
        reset: false,
-       delay: 700,
+       delay: 200,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
@@ -174,14 +175,14 @@
     });
     sr.reveal('#git', {
        reset: false,
-       delay: 200,
+       delay: 500,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
        duration: 1000
     });sr.reveal('#github', {
        reset: false,
-       delay: 500,
+       delay: 300,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
@@ -189,7 +190,7 @@
     });
     sr.reveal('#npm', {
        reset: false,
-       delay: 800,
+       delay: 600,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
@@ -197,14 +198,14 @@
     });
     sr.reveal('#nodejs', {
        reset: false,
-       delay: 300,
+       delay: 400,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
        duration: 1000
     });sr.reveal('#jquery', {
        reset: false,
-       delay: 600,
+       delay: 700,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
@@ -212,7 +213,7 @@
     });
     sr.reveal('#bootstrap', {
        reset: false,
-       delay: 900,
+       delay: 800,
        scale: .9,
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
@@ -234,6 +235,7 @@
         distance: '5px',
         easing: 'ease-in-out'
     });
+  };
 </script>
 </body>
 </html>
