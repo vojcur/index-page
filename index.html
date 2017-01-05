@@ -65,14 +65,14 @@
 		</blockquote>
 	</aside>
 	<section class="skills">
-		<h1>Technology I use</h1>
+		<h1 id="skill-heading-one">Technology I use</h1>
 		<h2 title="JavaScript" id="javascript"><span class="devicons devicons-javascript"></span><br>JavaScript</h2>
 		<h2 title="HTML5" id="html5"><span class="devicons devicons-html5"></span><br>html5</h2>
 		<h2 title="CSS3" id="css3"><span class="devicons devicons-css3"></span><br>css3</h2>
 		<h2 title="Git" id="git"><span class="devicons devicons-git"></span><br>Git</h2>
 		<h2 title="GitHub" id="github"><span class="devicons devicons-github"></span><br>GitHub</h2>
 		<h2 title="npm" id="npm"><span class="devicons devicons-npm"></span><br>npm</h2>
-		<h1>...and I learn</h1>
+		<h1 id="skill-heading-two">...and I learn</h1>
 		<h2 title="Node.js" id="nodejs"><span class="devicons devicons-nodejs"></span><br>Node.js</h2>
 		<h2 title="jQuery" id="jquery"><span class="devicons devicons-jquery"></span><br>jQuery</h2>
 		<h2 title="Bootstrap" id="bootstrap"><span class="devicons devicons-bootstrap"></span><br>Bootstrap</h2>
@@ -81,7 +81,7 @@
 
 	</section>
 	<section class="contact">
-		<h1>Contact</h1>
+		<h1 id="contact-heading">Contact</h1>
 		<!-- <p>Get in touch if you want to hire me.</p> -->
 		<!-- <div class="container">
 			<h2>Mobile</h2> <h3>48 786 275 340</h3><br>
@@ -151,6 +151,24 @@
     //    rotate: {x: 0, y: 180, z: 0},
     //    duration: 1500
     // });
+    sr.reveal('#skill-heading-one', {
+        origin: 'left',
+        reset: false,
+        delay: 100,
+        duration: 800,
+        distance: '-250px',
+        scale: 1,
+        easing: 'ease-in-out'
+    });
+    sr.reveal('#skill-heading-two', {
+        origin: 'right',
+        reset: false,
+        delay: 300,
+        duration: 800,
+        distance: '250px',
+        scale: 1,
+        easing: 'ease-in-out'
+    });
     sr.reveal('#javascript', {
        reset: false,
        delay: 100,
@@ -228,6 +246,15 @@
     //    rotate: {x: 0, y: 180, z: 0},
     //    duration: 1000
     // });
+    sr.reveal('#contact-heading', {
+        origin: 'right',
+        reset: false,
+        delay: 300,
+        duration: 800,
+        distance: '250px',
+        scale: 1,
+        easing: 'ease-in-out'
+    });
     sr.reveal('#myForm button', {
         reset: false,
         delay: 100,
