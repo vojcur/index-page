@@ -17,6 +17,8 @@ body>h1 {
   padding: 0;
   box-sizing: border-box;
   font-family: "Amatica SC", cursive;
+  /*font-family: "Roboto Slab", serif;*/
+  font-weight: 400;
   text-align: center;
   /*border: 1px solid green;*/
 }
@@ -79,7 +81,7 @@ header {
 }
 h1 {
   font-size: 2.7em;
-  color: #444;
+  color: #656565;
 }
 /*header h1:first-child {
   display:  none;
@@ -95,7 +97,6 @@ h1 {
   padding: 5px 15px 10px;
   border-top: 2px solid #777;
   border-bottom: 5px solid #777;
-  visibility:hidden;
 }
 h2 {
   margin-top: 18px;
@@ -132,6 +133,7 @@ blockquote {
   color: #eee;
   background-color: gray;
   font-size: 2.4em;
+  font-weight: 600;
   letter-spacing:normal;
   font-family:"Montserrat", sans-serif;
   font-style:oblique;
@@ -144,11 +146,12 @@ blockquote p:after {
   content: close-quote;
 }
 cite {
-  color: #eee;
+  /*color: #eee;*/
   font-size: 0.6em;
 }
 .author {
   font-family:"Montserrat", sans-serif;
+  color: #ddd;
 }
 blockquote a {
   /*font-size: 90%;*/
@@ -164,12 +167,16 @@ blockquote a {
 .skills {
   background-color: rgba(162, 182, 209, 0.5);
   padding-bottom: 100px;
+  font-family: "Montserrat", sans-serif;
 }
-.skill-title {
+/*.skill-title {
   font-family:"Montserrat", sans-serif;
   font-size: 10px;
-}
+}*/
 .skills h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-size: 2.4em;
   margin-top: 25px;
   margin-bottom: 15px;
 }
@@ -188,6 +195,7 @@ blockquote a {
   font-size: 4em;
   position: relative;
   top: 5px;
+  margin-bottom: 5px;
   /*color:white;
   text-shadow: 0 -.04em .04em rgba(0,0,0,.5);*/
 }
@@ -203,6 +211,9 @@ blockquote a {
 }
 .contact h1 {
   margin-bottom: 35px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-size: 2.4em;
 }
 .contact .container {
   position: relative;
