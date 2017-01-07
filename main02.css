@@ -85,14 +85,14 @@ header {
 }
 h1 {
   font-size: 2.7em;
-  font-size: 6.5vmax;
+  font-size: 6.4vmax;
   color: #656565;
 }
 hgroup {
   border:1px solid #aac;
   position: relative;
   top: 50vh;
-  margin-top: -19.5em;
+  margin-top: -18em;
 }
 header h1 a {
   width:100%;
