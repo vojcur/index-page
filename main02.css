@@ -77,7 +77,8 @@ nav ul li:hover {
 */
 header {
   position: relative;
-  top:-40px;
+  /*top:-40px;*/
+  top: -18vmin;
   margin: 0px auto;
   padding: 25px 30px;
   width:100%;
