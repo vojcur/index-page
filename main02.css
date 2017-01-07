@@ -85,7 +85,7 @@ header {
 }
 h1 {
   /*font-size: 2.7em;*/
-  font-size: 5.7vh;
+  font-size: 5.7vmax;
   color: #656565;
 }
 header h1 a {
