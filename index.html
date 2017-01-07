@@ -28,14 +28,18 @@
   <!-- Linked Files
   ==================================== -->
   <link rel="stylesheet" type="text/css" href="main02.css">
+
   <!-- Devicons
   ==================================== -->
   <link href='devicons-master/css/devicons.min.css' type="text/css" rel='stylesheet'>
 </head>
-<body>
+<body id="home">
   <h1>Portfolio Page</h1>
 	<div id="particles-js"></div>
   <div id="main-container">
+
+  <!-- Navigation
+  ===================================== -->
 	<nav>
 			<div class="hamburger-btn" id="hambtn">
         		<span class="hamburger-bars" id="bars"></span>
@@ -43,12 +47,14 @@
      	</div> 
 			<ul class="btnsbar" id="dropmenu">
 				<li><a href="#home">home</a></li>
-				<li><a href="#about">about</a></li>
 				<li><a href="#portfolio">portfolio</a></li>
 				<li><a href="#contact">contact</a></li>
         <li><a href="#credits">credits</a></li>
 			</ul>
 	</nav>
+
+  <!-- Header
+  ====================================== -->
 	<header>
 			<h1 class="developer">front-end developer</h1>
 			<h1 class="programmer">javascript programmer</h1>
@@ -57,6 +63,9 @@
 		<div class="container image-container">
 		  <img src="images/main_picture_a_500px.png" alt="me with my son">
 		</div>
+
+    <!-- Aside
+    ===================================== -->
 	<aside class="famous-quote">
     <h1>Famous Quote</h1>
 		<blockquote>
@@ -64,6 +73,9 @@
       		<cite class="author">— Joseph Weizenbaum,<br> <a class="author" href="https://en.wikipedia.org/wiki/Computer_Power_and_Human_Reason">Computer Power and Human Reason</a></cite>
 		</blockquote>
 	</aside>
+
+  <!-- Skills
+  ====================================== -->
 	<section class="skills">
 		<h1 id="skill-heading-one">Technology I use</h1>
 		<h2 title="JavaScript" id="javascript"><span class="devicons devicons-javascript"></span><br>JavaScript</h2>
@@ -77,10 +89,11 @@
 		<h2 title="jQuery" id="jquery"><span class="devicons devicons-jquery"></span><br>jQuery</h2>
 		<h2 title="Bootstrap" id="bootstrap"><span class="devicons devicons-bootstrap"></span><br>Bootstrap</h2>
 		<!-- <h2><span class="devicons devicons-sass"></span><br>Sass</h2> -->
-
-
 	</section>
-	<section class="contact">
+
+  <!-- Contact
+  ====================================== -->
+	<section class="contact" id="contact">
 		<h1 id="contact-heading">Contact</h1>
 		<!-- <p>Get in touch if you want to hire me.</p> -->
 		<!-- <div class="container">
@@ -99,10 +112,13 @@
 			<!-- </fieldset> -->
 			<button type="submit" value="Send">Submit</button>
 		</form>
-
 	</section>
+
+  <!-- Footer
+  ====================================== -->
 	<footer><p>&copy; design and programming<br>Wojciech Kurbiel 2016</p></footer>
   </div>
+
 	<script src="main.js"></script>
 	<script src="particles/myParticlesApp.js"></script>
 	<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
