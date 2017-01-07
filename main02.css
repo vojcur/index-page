@@ -85,8 +85,8 @@ header {
   height:80vh;
 }
 h1 {
-  /*font-size: 2.7em;*/
-  font-size: 8vmax;
+  font-size: 2.7em;
+  font-size: 10vmax;
   color: #656565;
 }
 header h1 a {
