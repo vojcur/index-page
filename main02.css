@@ -78,7 +78,7 @@ nav ul li:hover {
 header {
   position: relative;
   /*top:-40px;*/
-  top: -18vmin;
+  top: -6em;
   margin: 0px auto;
   padding: 25px 30px;
   width:100%;
@@ -86,7 +86,7 @@ header {
 }
 h1 {
   /*font-size: 2.7em;*/
-  font-size: 5.7vmax;
+  font-size: 6vmax;
   color: #656565;
 }
 header h1 a {
