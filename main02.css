@@ -84,7 +84,8 @@ header {
   height:80vh;
 }
 h1 {
-  font-size: 2.7em;
+  /*font-size: 2.7em;*/
+  font-size: 5.7vh;
   color: #656565;
 }
 header h1 a {
@@ -96,7 +97,7 @@ header h1 a {
 .name {
   margin-top: 1em;
   display: inline-block;
-  font-size: 2.7em;
+  /*font-size: 2.7em;*/
   font-weight: 600;
   letter-spacing: 1px;
   padding: 5px 15px 10px;
@@ -104,16 +105,7 @@ header h1 a {
   border-bottom: 3px solid #777;
   text-decoration: none;
 }
-h2 {
-  margin-top: 18px;
-  display: inline-block;
-  font-size: 3em;
-  letter-spacing: 1px;
-  color: #fff;
-  background-color: #444;
-  box-shadow:-1px 1px 15px #777;
-  padding: 5px 20px 10px;
-}
+
 .developer, .programmer, .name {
   visibility: hidden;
 }
@@ -187,6 +179,16 @@ blockquote a {
 
 .dev-icons {
   font-family: "devicons";
+}
+h2 {
+  margin-top: 18px;
+  display: inline-block;
+  font-size: 3em;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #444;
+  box-shadow:-1px 1px 15px #777;
+  padding: 5px 20px 10px;
 }
 .skills h2 {
   position: relative;
