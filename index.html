@@ -61,7 +61,7 @@
 			<h1 class="name"><a href="#contact">Wojciech Kurbiel</a></h1>
 	</header>
 		<div class="container image-container">
-		  <img src="images/main_picture_a_500px.png" alt="me with my son">
+		  <img id="mainImage" src="images/main_picture_a_500px.png" alt="me with my son">
 		</div>
 
     <!-- Aside
@@ -124,6 +124,9 @@
 	<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
 	<script>
    window.onload = function(e){
+    var image = document.getElementById("mainImage");
+    image.style.visibility = "visible";
+    
     window.sr = ScrollReveal();
     sr.reveal('.developer', {
         origin: 'left',
