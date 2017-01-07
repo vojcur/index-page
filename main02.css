@@ -140,7 +140,7 @@ img {
   position: relative;
   top: 5px;
   width: 100%;
-  visibility: none;
+  visibility: hidden;
   /*border: 1px solid pink;*/
 }
 /*
