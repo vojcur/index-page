@@ -16,9 +16,9 @@
   <!--Font
   ==================================== -->
   <link href="https://fonts.googleapis.com/css?family=Amatica+SC:400,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">  -->
 
   <!-- Particles Effect
   ==================================== -->
@@ -58,7 +58,7 @@
 	<header>
 			<h1 class="developer">front-end developer</h1>
 			<h1 class="programmer">javascript programmer</h1>
-			<h1 class="name">Wojciech Kurbiel</h1>
+			<h1 class="name"><a href="#contact">Wojciech Kurbiel</a></h1>
 	</header>
 		<div class="container image-container">
 		  <img src="images/main_picture_a_500px.png" alt="me with my son">
@@ -151,6 +151,14 @@
         distance: '5px',
         easing: 'ease-in-out'
     });
+    sr.reveal('.image-container', {
+        reset: false,
+        delay: 100,
+        scale: .95,
+        distance: '25px',
+        easing: 'ease-in-out',
+        duration: 1000
+    });
     sr.reveal('aside p, .author', {
         reset: false,
         delay: 100,
@@ -192,7 +200,8 @@
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
        duration: 1000
-    });sr.reveal('#html5', {
+    });
+    sr.reveal('#html5', {
        reset: false,
        delay: 400,
        scale: .9,
@@ -215,7 +224,8 @@
        distance: '10px',
        rotate: {x: 0, y: 180, z: 0},
        duration: 1000
-    });sr.reveal('#github', {
+    });
+    sr.reveal('#github', {
        reset: false,
        delay: 300,
        scale: .9,
