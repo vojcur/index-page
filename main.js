@@ -22,4 +22,12 @@ var sw = 0;
           hambtnX.style.display="none";
           bars.style.display="block"; 
         }
+      }, false);
+
+      dropmenu.addEventListener("click", function() {
+          sw=0;
+          // dropmenu.style.width="0px";
+          dropmenu.style.left="120%";
+          hambtnX.style.display="none";
+          bars.style.display="block"; 
       });
