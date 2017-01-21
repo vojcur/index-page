@@ -89,7 +89,7 @@ header {
 hgroup {
   /*border:1px solid #aac;*/
   position: relative;
-  top: -30px;
+  top: -20px;
   text-align: center;
   margin:auto;
 }
@@ -105,6 +105,7 @@ header h1 {
   background-color: rgba(255,255,255,0.8);
   text-shadow: -3px -3px 15px #fff;
   visibility:hidden;
+  /*margin-bottom:0.1em;*/
 }
 header h1 a {
   text-decoration: none;
@@ -112,7 +113,8 @@ header h1 a {
   font-family: "Montserrat", sans-serif;
 }
 .name {
-  margin-top: .6em;
+  margin: .5em;
+  /*margin-bottom: .8em;*/
   display: inline-block;
   width:initial;
   letter-spacing: 2px;
@@ -126,7 +128,7 @@ header h1 a {
 .developer, .programmer, .name {
   visibility: hidden;
 }
-img {
+#mainImage {
   position: relative;
   top: 5px;
   width: 100%;
@@ -177,6 +179,41 @@ blockquote a {
   font-family:"Montserrat", sans-serif;
 }
 /*
+   =============================
+            Projects
+   =============================
+*/
+.projects h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-size: 2.5em;
+  margin-top: 0px;
+  margin-bottom: 45px;
+}
+.projects h2 {
+  /*display: block;*/
+  max-width: 250px;
+  margin:0 auto 15px;
+  font-size: 2.4em;
+  letter-spacing: 1px;
+  color: #333;
+  background-color: #fff;
+}
+.projects img {
+  width:100%;
+  max-width:250px;
+}
+.projects a {
+  display: block;
+  margin-top: 10px;
+}
+.projects button {
+  padding: 2px 6px;
+}
+
+
+
+/*
    ==============================
               Skills
    ==============================
@@ -197,7 +234,7 @@ blockquote a {
 .dev-icons {
   font-family: "devicons";
 }
-h2 {
+.skills h2 {
   margin-top: 18px;
   display: inline-block;
   font-size: 3em;
@@ -206,10 +243,11 @@ h2 {
   background-color: #444;
   box-shadow:-1px 1px 15px #777;
   padding: 5px 20px 10px;
-}
-.skills h2 {
   position: relative;
   font-size: 150%;
+}
+.skills h2 {
+  
 }
 .skills h2 span{
   font-size: 4em;

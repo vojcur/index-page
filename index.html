@@ -58,7 +58,7 @@
     <hgroup>
 			<h1 class="developer">front-end development</h1>
 			<h1 class="programmer">javascript programming</h1>
-			<h1 class="name"><a href="#contact">Wojciech Kurbiel</a></h1>
+      <h1 class="name"><a href="#contact">Wojciech Kurbiel</a></h1>
     </hgroup>
 	</header>
 		<div class="container image-container">
@@ -74,6 +74,15 @@
       		<cite class="author">— Joseph Weizenbaum,<br> <a class="author" href="https://en.wikipedia.org/wiki/Computer_Power_and_Human_Reason">Computer Power and Human Reason</a></cite>
 		</blockquote>
 	</aside>
+
+  <!-- Projects
+  ====================================== -->
+  <section class="projects" id="projects">
+    <h1 id="projects-heading">Projects</h1>
+    <h2>Memory Grid Game</h2>
+    <img src="images/memory_grid01.png" alt="screen capture of Memory Grid game">
+    <a href="games/memory_grid/memory_grid.html"><button>play</button></a>
+  </section>
 
   <!-- Skills
   ====================================== -->
@@ -162,7 +171,7 @@
     });
     sr.reveal('.image-container', {
         reset: false,
-        delay: 100,
+        delay: 0,
         scale: .95,
         distance: '25px',
         easing: 'ease-in-out',
@@ -291,11 +300,12 @@
         easing: 'ease-in-out'
     });
     sr.reveal('#myForm button', {
+        origin: 'bottom',
         reset: false,
         delay: 100,
-        duration: 1100,
+        duration: 1000,
         // rotate: {x: 180, y: 0, z: 0},
-        distance: '5px',
+        distance: '20px',
         easing: 'ease-in-out'
     });
   };

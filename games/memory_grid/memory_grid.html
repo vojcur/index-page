@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nowy_JavaScript</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>-->
+</head>
+<body>
+	<script src="libraries/processing-1.4.1.min.js" type="text/javascript"></script>
+	<!--<script src="buzz.min.js" type="text/javascript"></script>-->
+
+	<h2></h2>
+	<div id="wrapper">
+   	<canvas id="canvas"></canvas>
+   	<div id="butts">
+   		<button onclick="localStorage.removeItem('bestScore')"> reset Best Score</button>
+   		<!-- <button onclick="alert('Wojciech Kurbiel oxdecor@gmail.com')"> About Me</button> -->
+        <a href="../../index.html#projects"><button>go back</button></a>
+
+   		<button onclick="location.reload()">reload</button>
+   	</div>	
+   </div>
+  <script>
+    var canvas = document.getElementById("canvas");
+    var processing = new Processing(canvas, function(processing) {
+        processing.size(340, 450);
+        processing.background(0xFFF);
+
+        var mouseIsPressed = false;
+        processing.mousePressed = function () { mouseIsPressed = true; };
+        processing.mouseReleased = function () { mouseIsPressed = false; };
+
+        var keyIsPressed = false;
+        processing.keyPressed = function () { keyIsPressed = true; };
+        processing.keyReleased = function () { keyIsPressed = false; };
+
+        function getImage(s) {
+            var url = "https://www.kasandbox.org/programming-images/" + s + ".png";
+            processing.externals.sketch.imageCache.add(url);
+            return processing.loadImage(url);
+        }
+        
+        function getSound(s) {
+            var url = "https://www.kasandbox.org/programming-sounds/" + s + ".wav";
+            processing.externals.sketch.soundCache.add(url);
+            return processing.loadSound(url);
+        }
+
+        with (processing) {
+
+
+            // INSERT YOUR KHAN ACADEMY PROGRAM HERE
+//+----------------------------------+
+//|                                  |
+//|         Memory Grid              |
+//|                                  |
+//+----------------------------------+
+
+var currentScene;
+var points = 0;
+var bonus = 0;
+var roundCount = 0;
+var delayStartFC = null;
+var drawScene1;
+var drawScene2;
+var rounds;
+var roundNumber = 12; // oryg 12
+var colorDown = color(255,255,255);
+var colorUp = color(245, 93, 111);
+var ileTiles = 3;  //oryg 3
+var cols = 3; //oryg 3
+var rows = 3;
+var levelCount = 1;
+var gridTop;
+var img2 = loadImage("img/memoryGrid2.png"); //taking image from disk
+var img3 = loadImage("starz.jpg"); //taking image from disk
+var sound1 = new Audio("sounds/metalic.wav");
+//sound1.play();
+var soundCards = new Audio("sounds/dealing-card.wav");
+soundCards.play();
+
+//localStorage.removeItem('bestScore');  
+
+//----localStorage----
+if (typeof (Storage) !== "undefined") {
+	if (!localStorage.bestScore) {
+		localStorage.bestScore = 0;	
+	}
+	var theBest = localStorage.bestScore;   
+}
+//--------------------
+
+
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+    
+Button.prototype.draw = function() {
+    fill(235, 237, 95,200);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(107, 106, 106);
+    textSize(21);
+    textAlign(LEFT, TOP);
+    text(this.label, this.x+45, this.y+this.height/4);
+};
+    
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+        mouseX < (this.x + this.width) &&
+        mouseY > this.y &&
+        mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+//+------------------------------+
+//|                              |
+//|         Level One            |
+//|                              |
+//+------------------------------+
+
+var drawLevel1 = function() {
+    currentScene = 3;
+    background(255, 255, 255);
+    image(getImage("space/background"),0,0,width,height);
+    fill(255, 255, 255,40);
+    rect(0,0,width,height);
+    roundCount++;
+    var foundCorrect = 0;
+    
+    if (levelCount === 1){
+    	cols = 3;
+    	rows = 3;
+    	ileTiles = 3;
+    }else if(levelCount === 2){
+		cols = 3;
+    	rows = 3;
+    	ileTiles = 4;   
+    }else if(levelCount === 3){
+		cols = 4;
+    	rows = 4;
+    	ileTiles = 5;   
+    }else if(levelCount === 4){
+		cols = 4;
+    	rows = 4;
+    	ileTiles = 6;   
+    }else if(levelCount === 5){
+		cols = 4;
+    	rows = 4;
+    	ileTiles = 7;   
+    }else if(levelCount === 6){
+		cols = 5;
+    	rows = 4;
+    	ileTiles = 8;   
+    }else if(levelCount === 7){
+		cols = 5;
+    	rows = 4;
+    	ileTiles = 9;   
+    }else if(levelCount === 8){
+		cols = 5;
+    	rows = 5;
+    	ileTiles = 10;   
+    }else if(levelCount === 9){
+		cols = 6;
+    	rows = 5;
+    	ileTiles = 11;   
+    }else if(levelCount === 10){
+		cols = 6;
+    	rows = 6;
+    	ileTiles = 12;   
+    }else if(levelCount === 11){
+		cols = 6;
+    	rows = 6;
+    	ileTiles = 13;   
+    }else if(levelCount === 12){
+		cols = 6;
+    	rows = 6;
+    	ileTiles = 14;   
+    }else if(levelCount === 13){
+		cols = 6;
+    	rows = 6;
+    	ileTiles = 15;   
+    };
+    quad(width/2-99, 0, width/2+97, 0, width/2+89, 33, width/2-90, 33); //--upper field
+    fill(255,255,255);
+    text("tiles "+ileTiles,width/2-83,5);
+    text("round "+roundCount,width/2+6,5);
+    //First let's make Tile constructor
+    var Tile = function(x,y) {
+        this.x = x;
+        this.y = y;
+        this.width = 55;
+        this.marked = 0;
+        this.correct = 0;
+    };
+//adding a method to the Tile object
+    Tile.prototype.drawFaceDown = function () {
+        this.marked = 0;
+        fill(255,255,255);
+        strokeWeight(1);
+        rect(this.x, this.y, this.width, this.width, 5);
+    };
+///adding a method to the Tile object
+    Tile.prototype.drawFaceUp = function () {
+        this.marked = 1;
+        fill(245, 93, 111);
+        strokeWeight(1);
+        rect(this.x, this.y, this.width, this.width, 5);
+    };
+//create an array of Tiles at appropriate positions
+    var tiles =[];
+    
+ //draw the table
+    fill(255, 255, 255,170);
+    //rect(40,40,308,308,10);
+    rect(width/2-cols*58/2-2-5,width/2-cols*58/2-2-5+50,cols*58+2+10,rows*58+2+10,10);   
+    
+	 gridTop =  width/2-cols*58/2-2-5+50; // górna krawędź table  
+    
+    for(var i=0; i<cols; i++) {
+        for(var j=0; j<rows; j++) {
+            //tiles.push(new Tile(i*58+50, j*58+50));
+            tiles.push(new Tile(i*58+width/2-cols*58/2, j*58+width/2-cols*58/2+50));
+        }
+    }
+//Start by drawing them all face down
+    for(var i=0; i<tiles.length; i++) {
+        tiles[i].drawFaceDown();
+        tiles[i].correct=0;
+    }
+//
+Tile.prototype.isUnderMouse = function(x, y) {
+    return x >= this.x && x <= this.x + this.width  &&
+        y >= this.y && y <= this.y + this.width;
+};
+
+//------array of random tiles------
+    var selected = [];
+    var possibleTiles = tiles.slice(0);
+    for (var i = 0; i < ileTiles; i++) {
+        // Randomly pick one from the array of remaining Tiles
+        var index = floor(random(possibleTiles.length));
+        var picked = possibleTiles[index];
+        // Push 1 copy onto array
+        selected.push(picked);
+        // Remove from array
+        possibleTiles.splice(index, 1);
+    }
+//++++++++++przyporzadkowanie wartosci correct wylosowanym plytkom+++++++++++
+    for (var i = 0; i < selected.length; i++) {
+        selected[i].correct=1;
+    }
+//----------Draw them all face up--------------
+    for(var i=0; i<selected.length; i++) {
+        selected[i].drawFaceUp();
+        selected[i].marked=1;
+    }
+    
+    //=============   mouseClicked  ================
+    
+    mouseClicked = function() {
+       
+        for (var i = 0; i < selected.length; i++) {
+        
+    //---------------prawidłowe wskazanie-------------------        
+            if (selected[i].isUnderMouse(mouseX, mouseY) && selected[i].marked===0 && currentScene===3 ) {   
+                
+                selected[i].drawFaceUp();
+                soundCards.play();
+                bonus++;
+                points+=i*15*(bonus+5);
+                foundCorrect++;
+                if(foundCorrect === ileTiles) {
+                    levelCount++;
+                    foundCorrect=0;
+                    sound1.play();
+                    rounds();//---rounds management------
+                }
+            }
+            
+        }
+    //-----------nieprawidłowe wskazanie----------------     
+        for (var i = 0; i < tiles.length; i++) {
+            if(tiles[i].isUnderMouse(mouseX, mouseY) && tiles[i].correct===0 && currentScene===3 ){
+                bonus = 0;
+                levelCount--;
+                rounds();
+                
+            }
+        }
+        
+    };//-----end of mouseClicked function-------
+    
+   //---------------------timer----------------------
+   delayStartFC = frameCount;
+                    loop();
+   
+   draw = function() {
+        if (frameCount - delayStartFC > 70) {
+            for (var i = 0; i < tiles.length; i++) {
+                tiles[i].drawFaceDown();
+            }
+            delayStartFC = null;
+            noLoop();
+        }
+    };
+};      //---end of level one---
+    
+//+------------------------------+
+//|                              |
+//|         Scene 1              |
+//|                              |
+//+------------------------------+   
+var drawScene1 = function() {
+    currentScene = 1;
+    background(100, 100, 255);
+    image(getImage("space/background"),0,0,width,height);
+    image(getImage("avatars/leaf-green"),width/2-50,height/2-50,100,100);
+    //fill(97, 95, 93);
+    fill(250, 250, 250);
+    textSize(18);
+    text("BrainFullGames",width/2-70,height/2+80);
+};
+drawScene1();
+//+------------------------------+
+//|                              |
+//|         Scene 2              |
+//|                              |
+//+------------------------------+
+var btn1 = new Button({
+        x: 120,
+        y: 360,
+        label: "PLAY!",
+        onClick: function() {
+            sound1.play();
+            drawLevel1();
+        }
+    });
+    debugger;
+var drawScene2 = function() {
+    currentScene = 2;
+    background(247, 244, 234);
+    image(getImage("space/background"),0,0,width,height);
+    fill(254, 254, 254,150);
+    rect(-5,75,width+10,250);
+    fill(250, 250, 250);
+    image(img2, 50, 125);
+    textSize(35);
+    text("Memory Grid",width/2-105,height/2-175);
+    
+    btn1.draw();
+};//---------end of scene two-----------
+
+//+------------------------------+
+//|                              |
+//|         Scene 3              |
+//|                              |
+//+------------------------------+   
+var drawScene3 = function() {
+    currentScene = 4;
+    
+    //-----semi transparent glass-------
+    stroke(71, 62, 58);
+    fill(182, 244, 245,150);
+    rect(width/2-127,height/2-120,240,230,10);
+    noFill();
+    rect(width/2-95, height/2+35,178,53,4);
+    
+    //-------star sign----------
+    fill(250, 250, 250);
+    ellipse(width/2-5,height/2-15,80,80);
+    image(getImage("space/star"),width/2-55,height/2-65,100,100);
+    
+    //------back for scores-----------
+    fill(252, 252, 252,200);
+    rect(width/2-95, height/2+35,178,53,5);
+    
+    //----score/points----------
+    fill(71, 62, 58);
+    textSize(28);
+    text("Score: "+ points, width/2-90, height/2+45);
+    noFill();
+
+	   
+    //------best score -----------
+    if (points > theBest) {
+		localStorage.bestScore = points;
+		localStorage.bestScore;
+		fill(0, 0, 0);
+    	textSize(18);
+    	text("Best Score: "+ localStorage.bestScore, width/2-70, gridTop-25);
+    	noFill();
+	}else {
+		fill(255,255,255);
+    	textSize(18);
+    	text("Best Score: "+ theBest, width/2-70, gridTop-25);
+    	noFill();	
+	};
+    
+       
+};
+	
+
+//========rounds management==========
+var rounds = function() {
+    if(roundCount<roundNumber && currentScene===3){
+        bonus = 0;
+        drawLevel1();
+    }else if(roundCount === roundNumber && currentScene===3) {
+        drawScene3();
+    }
+};
+
+
+
+
+//----------scene management-------------
+mouseClicked = function() {
+        if(currentScene === 1) {
+            drawScene2();
+        }else if(currentScene === 2){
+            btn1.handleMouseClick();
+        }else if(currentScene === 3){
+            playSound(snd1);
+            
+        }else if(currentScene === 4){
+        		Program.restart();
+        }
+};
+//-----------------END----------------------
+
+
+
+        }
+        if (typeof draw !== 'undefined') processing.draw = draw;
+    });
+  </script>
+</body>
+</html>
