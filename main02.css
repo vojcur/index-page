@@ -62,10 +62,11 @@ nav a {
 
 .btnsbar {
   position:relative;
-  left: 120%;
+  left: 100%;
   top: -9px;
   z-index: 10;
   transition: .5s;
+  
 }
 nav ul li:hover {
   background-color: #aaa;
@@ -79,25 +80,38 @@ header {
   position: relative;
   top:-40px;
   margin: 0px auto;
-  padding: 25px 30px;
+  padding: 0px 20px;
   width:100%;
   height:80vh;
+  /*background-color: #eee;*/
+  display:flex;
+}
+
+hgroup {
+  /*border:1px solid #aac;*/
+  position: relative;
+  top: -40px;
+  /*margin-top: 24vmax;*/
+  text-align: center;
+  margin:auto;
 }
 h1 {
+  display:block;
+  width:13em;
   font-size: 2.3em;
   /*font-size: 6.4vmax;*/
   color: #656565;
   font-family: "Montserrat", sans-serif;
-
+  margin: 0 auto;
 }
-hgroup {
-  /*border:1px solid #aac;*/
-  position: relative;
-  top: 5vh;
-  /*margin-top: 24vmax;*/
+header h1 {
+  position:relative;
+  background-color: rgba(255,255,255,0.8);
+  text-shadow: -3px -3px 15px #fff;
+  visibility:hidden;
 }
 header h1 a {
-  width:100%;
+  /*width:100%;*/
   text-decoration: none;
   color: #656565;
   /*font-weight: 600;*/
@@ -106,11 +120,12 @@ header h1 a {
 .name {
   margin-top: .6em;
   display: inline-block;
+  width:initial;
   /*font-size: 2.7em;*/
   /*font-weight: 600;*/
   letter-spacing: 2px;
   font-size: 1.8em;
-  text-shadow: -3px -3px 10px #fff;
+  /*text-shadow: -3px -3px 10px #fff;*/
   padding: 6px 15px 7px;
   border-top: 1px solid #777;
   border-bottom: 1px solid #777;
