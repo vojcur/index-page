@@ -204,10 +204,18 @@ blockquote a {
   max-width:250px;
 }
 .projects a {
-  display: block;
-  margin-top: 10px;
+  display:block;
+  margin-top: 15px;
+  width:5em;
+  margin:0 auto;
 }
 .projects button {
+  width: 5em;
+  height: 3em;
+  /*background:#789AB4 linear-gradient(hsla(0, 0%, 100%, .6), transparent);*/
+  background:#777777 linear-gradient(hsla(0, 0%, 100%, .6), transparent);
+  color: white;
+  text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
   padding: 2px 6px;
 }
 
