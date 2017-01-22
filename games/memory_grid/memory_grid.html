@@ -330,16 +330,16 @@ var drawScene1 = function() {
     //fill(97, 95, 93);
     fill(250, 250, 250);
     textSize(18);
-    text("BrainFullGames",width/2-70,height/2+80);
+    text("Memory Grid Game",width/2-80,height/2+80);
 };
-drawScene1();
+img2.onload = drawScene1();
 //+------------------------------+
 //|                              |
 //|         Scene 2              |
 //|                              |
 //+------------------------------+
 var btn1 = new Button({
-        x: 120,
+        x: 100,
         y: 360,
         label: "PLAY!",
         onClick: function() {
