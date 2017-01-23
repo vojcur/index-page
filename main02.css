@@ -141,6 +141,8 @@ header h1 a {
             Quotation
    =============================
 */
+aside {
+}
 aside>h1 {
   display: none;
 }
@@ -196,6 +198,7 @@ blockquote a {
   background: #fff;
   border:3px solid #ccc;
   margin:0 auto;
+  margin-bottom:50px;
 }
 .projects h2 {
   /*display: block;*/
@@ -383,13 +386,40 @@ footer {
   color: white;
 }
 
-/*@media (min-width: 1000px) {
-  header {
+@media (min-width: 1000px) {
+  hgroup {
+    left:10%;
+  }
+  .image-container {
+    display: none;
+  }
+  .pic {
+    position:relative;
+    top:0px;
+    left:25%;
+    top:30%;
+    border-radius: 50%;
+    width:185px;
+    height:185px;
+    float:left;
+    margin-left:0px;
+    margin-right:0px;
+    background-image: url(images/mk8.jpg);
+    background-position: center center;
+    background-size: 110%;
+    box-shadow: 2px 5px 8px 1px #999;
+    z-index: 3;
+  }
+  blockquote p, cite {
+    width: 50%;
+    margin:0 auto;
+  }
+  /*header {
     width: 50%;
     float: right;
   }
   .image-container {
     width: 50%;
     float: right;
-  }   
-}*/
+  }   */
+}

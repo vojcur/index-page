@@ -55,6 +55,7 @@
   <!-- Header
   ====================================== -->
 	<header>
+    <image class="pic">
     <hgroup>
 			<h1 class="developer">front-end development</h1>
 			<h1 class="programmer">javascript programming</h1>
@@ -80,9 +81,14 @@
   <section class="projects" id="projects">
     <h1 id="projects-heading">Projects</h1>
     <div class="project-container">
-    <h2>Memory Grid Game</h2>
+    <h2>Memory Grid</h2>
     <img src="images/memory_grid01.png" alt="screen capture of Memory Grid game">
     <a href="games/memory_grid/memory_grid.html"><button>play</button></a>
+    </div>
+     <div class="project-container">
+    <h2>Balloons</h2>
+    <img src="images/balloons03.png" alt="screen capture of Memory Grid game">
+    <a href="games/multiplication/balloons_index.html"><button>play</button></a>
     </div>
   </section>
 
@@ -171,7 +177,7 @@
         distance: '5px',
         easing: 'ease-in-out'
     });
-    sr.reveal('.image-container', {
+    sr.reveal('.image-container, .pic', {
         reset: false,
         delay: 0,
         scale: .95,
