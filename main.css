@@ -7,6 +7,9 @@
 	/*background-color: #bbb;*/
 	/*border:1px solid white;*/
 }
+body {
+	scroll-behavior: smooth;
+}
 /*
 ================================
          Hamburger Button
