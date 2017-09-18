@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baloons</title>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="balloons01.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js" type="text/javascript"></script>
+  <!-- <script src="processing1-4-8.min.js" type="text/javascript"></script> -->
+  <script src="buzz.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="butts">
+      <button id="pause" onclick="displayScoreList()">pause</button>
+      <button onclick="playGame()"> Play</button>
+      <button type="button" disabled onclick="localStorage.removeItem('MathHiScore') ">reset High Score</button>
+      <button onclick="location.reload()">reload</button>
+   </div>   
+  <h1>Balloons</h1>
+   <canvas id="canvas"></canvas>
+   <span class="display" id="points-display">points: 0</span>
+   <span class="display" id="howmanyleft-display">left: </span>
+   
+  <script>
+  	var displayScoreList;	 
+    var canvas = document.getElementById("canvas");
+    var scoreManager;
+    var hiScoreSort;  // function    
+    var hiScore = [];  // array
+    var newPts;
+	 var newName; 
+  	 var playGame;
+     var ctx = canvas.getContext('2d');
+  	 
+    // var canvas = document.getElementById("canvas");
+    var processing = new Processing(canvas, function(processing) {
+        processing.size(380, 500);
+        processing.background(0xFFF);
+        processing.textFont('Bungee', 18);
+
+        var mouseIsPressed = false;
+        processing.mousePressed = function () { mouseIsPressed = true; };
+        processing.mouseReleased = function () { mouseIsPressed = false; };
+
+        var keyIsPressed = false;
+        processing.keyPressed = function () { keyIsPressed = true; };
+        processing.keyReleased = function () { keyIsPressed = false; };
+
+        var howManyLeftDisplay = document.getElementById("howmanyleft-display");
+
+
+        with (processing) {
+
+
+            // INSERT YOUR KHAN ACADEMY PROGRAM HERE
+
+
+
+var odpo=0;
+var odpoArr = [];
+var points = 0;    // points -- 120, 175
+var diffLevel = 0;
+diffLevelFrom = 0;
+diffLevelTo = 0;
+var gameStatus = "active";  // string: active, inactive
+
+// var applause = new Audio('sounds/SMALL_CROWD_APPLAUSE-Yannick_Lemieux-1268806408.wav');
+var balloonPop = new Audio('sounds/pop1.ogg');
+var balloonCrash = new Audio('sounds/Balloon Popping-SoundBible.com-1247261379_002.wav');
+var music = new buzz.sound('sounds/Mountainside.mp3');
+// music.loop().play();
+music.play();
+
+
+playGame = function(){
+	if(gameStatus === "active"){
+		canvas.focus();
+		loop();
+		document.getElementById("pause").disabled = false;
+	}	
+};
+playGame();
+
+//----localStorage----
+//====================
+
+if(localStorage.getItem("MathHiScore") !== null) {
+	hiScore = JSON.parse(localStorage.getItem("MathHiScore"));
+}else {
+		//var entry = { name: '...', pts: " " };
+		for(i=0; i<8; i++) {
+		hiScore.push({name: '...', pts: " "});
+		}
+};
+
+//test
+console.log(hiScore.length);
+
+displayScoreList = function(){
+	
+	noLoop();
+	document.getElementById("pause").disabled = true;
+	fill(235,235,235,155);
+	noStroke();
+	rect(40,60,300,280,10);
+	stroke(120);
+	fill(80,80,80);
+	textSize(21);
+	
+	for(var i = 0; i < 8; i++) {
+		text(i+1 + ".   " + hiScore[i].name,85,100 + i*30);
+		text(hiScore[i].pts,290,100 + i*30);		
+	}	
+};
+//--------------------
+scoreManager = function () {
+	
+	newPts = points; 
+	//display info -- points achieved
+	fill(235);
+	noStroke();            //---czyszczenie
+	rect(80,8,220,29); 
+	stroke(120);
+	fill(230,255,230);
+	ellipse(217,23,33,33);  //---ozdoba
+	fill(70,80,80);
+	textSize(18);
+	text("You have got  " + newPts + "  points!", 90,30);
+	if(newPts>hiScore[7].pts || hiScore[7].pts == " "){
+		textSize(12);
+		newName = prompt("You scored " + newPts + " points! " + " Write your name here:"," ");
+		hiScore.push({name: newName, pts: newPts});
+		hiScoreSort();
+		hiScore.pop();
+		console.log(hiScore.length);
+		localStorage.setItem("MathHiScore", JSON.stringify(hiScore));	//+++ to localStorage		
+		fill(240);
+		displayScoreList();
+	}
+  if(newPts>hiScore[0].pts || hiScore[0].pts == " ") {
+    // applause.play();
+  }
+};
+
+hiScoreSort = function(){
+	hiScore.sort(function (a, b) {
+  		if (b.pts > a.pts) {
+    		return 1;
+  		}
+  		if (b.pts < a.pts) {
+    		return -1;
+  		}
+  			// a must be equal to b
+  			return 0;
+	});
+};
+
+
+//-------baloon object constructor--------
+//----------with suma property------------
+//=========================================
+
+var baloon = function(x, y){
+    this.x=x;
+    this.y=y;
+    this.dod1=round(random(diffLevel,9));
+    this.dod2=round(random(diffLevelFrom, diffLevelTo));
+    this.suma=this.dod1*this.dod2;
+    this.size=size;
+    this.speed=random(0.6, 0.8);
+    this.r=random(150,255);this.g=random(150,255);this.b=random(150,255);
+};
+
+
+//-------added a method 'drawThem'----------
+
+baloon.prototype.drawThem = function() {
+    fill(this.r, this.g, this.b,235);
+    strokeWeight(1);
+    stroke(140, 140, 140);
+    ellipse(this.x, this.y, 57,57);
+    fill(69, 52, 52,235);
+    textSize(21);
+    text(this.dod1+"*"+this.dod2,this.x-18, this.y+6);
+    noStroke();
+    fill(255, 255, 255,180);
+    ellipse(this.x+8, this.y-21,9,6);   // błysk światła
+    stroke(140, 140, 140);
+};
+
+//---create an array of baloons at random positions-----------
+var Many = [];
+var ileball = 10;
+var distance = 120;
+for(var i=0; i<ileball/2; i++){
+			diffLevel = 0;
+			diffLevelFrom = 1;
+			diffLevelTo = 5;
+         Many.push(new baloon(round(random(40,360)),-distance*i));
+  }
+     // ileball = 6;
+for(var i=0; i<ileball; i++){
+			diffLevel = 2;
+			diffLevelFrom = 3;
+			diffLevelTo = 8;
+         Many.push(new baloon(round(random(40,360)),-(ileball*distance)+(distance*i)));
+     }
+for(var i=0; i<ileball; i++){
+			diffLevel = 4;
+			diffLevelFrom = 5;
+			diffLevelTo = 9;
+      this.speed = 0.8;
+         Many.push(new baloon(round(random(40,360)),-(ileball*distance*2)+((20+distance)*i)));
+     }
+for(var i=0; i<ileball*2; i++){
+			diffLevel = 6;
+			diffLevelFrom = 6;
+			diffLevelTo = 9;
+      this.speed = 0.5;
+         Many.push(new baloon(round(random(40,360)),-(ileball*distance*3)+((40+distance)*i)));
+     }
+//========================================================
+
+//------best score -----------
+ 
+ 
+ 
+ 
+
+
+//-----------------DRAW------=--------
+//var a=0.1;                         
+var suma;
+var balloonsLeft = Many.length; 
+howManyLeftDisplay.innerHTML = "left: " + balloonsLeft; 
+//var m;
+var leftX = 166;  
+var rightX = 237;
+var yAnim = -30;
+//frameRate(19);
+draw = function() {
+		 //document.getElementById("pause").disabled = false;
+		
+		 // background(225, 235, 245);
+     // canvas.style.backgroundColor = 'blue';
+     background(215, 234, 250);
+		 line(0, 0, width, height);
+		 println(frameRate);
+    //--------floor--------
+    	 
+    	 fill(64,200,64,230);    	 
+    	 rect(0,height-20,width,20);
+    	 
+   
+	 // --- points -------
+	 	fill (255,255,255);
+	 	//stroke(50,50,50);
+	 	textSize(18);
+	 	text( "points:" + " " + points, 25, height-5 ); 
+	 	
+	 //--- balloons left-----
+	 	text( "left:" + " " + balloonsLeft, 300, height-5 ); 
+   
+   
+    //------spadające balony----------
+        
+        for(var m=0;m<Many.length;m++) {
+            if(Many[m].y<460){
+            	Many[m].y=Many[m].y+Many[m].speed;
+            	Many[m].drawThem();
+            } else if ( Many[m].y > 460 ) {
+					Many.splice(m,1);
+					balloonCrash.play();
+					balloonsLeft--;
+          howManyLeftDisplay.innerHTML = "left: " + balloonsLeft; 
+            }  
+        }
+    //-----------okno odpowiedzi-----------
+    	  fill(255,255,255);
+    	  //rect(width/2-32,height-60,69,60,5);
+    	  fill(69, 52, 52);
+    	  //fill(93,105,117);
+        rect(width/2-30,height-60,65,60,5);
+        fill(255, 255, 255,230);
+        rect(width/2-25,height-59,55,50,5);
+        stroke(255);
+        strokeWeight(4);
+        line(width/2-19,height-55,width/2+23,height-55);
+        strokeWeight(8);
+        stroke(245);
+        line(width/2-19,height-17,width/2+23,height-17);
+        strokeWeight(1);
+        stroke(255);
+        arc(width/2+19,height-51,15,8, 245,320);
+    //--------odpoArr-----------
+        
+        
+     
+     
+    //--------cyfry w oknie---------  
+            odpo = odpoArr.join("");  //<---------odpo------
+            textSize(42);
+            fill(69, 52, 52,235);
+            if (odpoArr.length === 1){
+            text(odpo,width/2-11,height-20);
+            } else {
+            text(odpo,width/2-21,height-20); 
+            }
+    
+	
+		 // clouds 
+       fill(205, 205, 205);
+       noStroke();
+       // left cloud
+       ellipse(leftX--, 10, 126, 97);
+       ellipse(leftX+62, 15, 70, 60);
+       ellipse(leftX-62, 15, 70, 60);
+       if(leftX<430){    
+       	leftX+=3;
+       }else{
+       	leftX=-200;
+       };     
+      
+     
+      if ( balloonsLeft === 0) {             //<<<---- warunek uznania gry za zakończoną----
+      		noLoop();
+      		gameStatus = "inactive";
+      		//setTimeout(theEnd, 1500); 
+      		//setTimeout(BestScore, 1000); 
+      		setTimeout(scoreManager, 2000);                
+     	}      
+            
+    //++++++++KEY PRESSED+++++++++++ 
+   
+   
+}; // draw  
+  
+  var pointsDisplay = document.getElementById("points-display");
+
+  keyPressed = function() {
+        if(odpoArr.length < 2){
+            odpoArr.push(key);
+        }
+        if ( keyCode === ENTER ) {
+
+            for ( var i=0; i<Many.length; i++ ) {
+                if ( odpo.toString() === Many[i].suma.toString() && Many[i].y>20 ) {
+                    
+                    if ( 10 < Many[i].suma && Many[i].suma <= 20 ) {
+                    points+=5;
+                    } else if (Many[i].suma > 20 && Many[i].suma <= 50) {
+                    points+=8;              
+                    } else if (Many[i].suma > 50) {
+                    points+=15;              
+                    } else {
+                    points++;             
+                    }     
+
+              pointsDisplay.innerHTML = "points: " + points;
+
+              Many.splice ( i,1 );
+                    balloonPop.play();  
+                    balloonsLeft = Many.length;
+
+                    howManyLeftDisplay.innerHTML = "left: " + balloonsLeft;
+                    odpoArr.pop();  //usunięcie cyfr z okna odpowiedzi
+                    odpoArr.pop();           
+                    
+                } else { // if
+                    odpoArr.pop();
+                    odpoArr.pop();
+                }  // else
+            }  // for
+        }  // if
+    };  // keyPressed
+
+
+//-----------------END----------------------
+
+
+
+        }
+        if (typeof draw !== 'undefined') processing.draw = draw;
+    });
+  </script>
+  	
+</body>
+</html>

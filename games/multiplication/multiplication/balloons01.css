@@ -1,0 +1,78 @@
+html {
+/*background-image: url(floatinghouse.jpeg);   #0081B6     #3F8AC4   */
+/*background-image: linear-gradient(#ffffff 50%, #DBEAF9 120%);*/
+text-align: center;
+}
+h1 {
+	margin: 20px auto;
+	margin-top: 50px;
+	font-family: "Bungee Shade", cursive;
+	font-size: 3.2em;
+	color: gray;
+}
+/*#wrapper {
+	display:block;
+	position:relative;
+	border:1px solid gray;
+	border-radius: 5px;
+	padding-left:20px;
+	padding-right:20px;
+	margin:75px auto;
+	margin-bottom: 0px;
+}*/
+#butts {
+	display: block;
+	position: relative;
+	border-color: gray;
+	/*border:1px solid gray;*/
+	margin:10px auto;
+	/*text-align:center;*/
+}
+
+img {
+    display:block;
+    /*background-color: white;*/
+	 margin: -1px auto; 
+	 margin-top: 30px;
+	 padding-bottom: 0;
+}
+
+canvas {
+	display:block;
+	border-color: gray;
+	border:1px solid gray;
+	margin: 1px auto;
+	font-family: 'Bungee', cursive;
+}
+button {
+	display:inline-block;
+	margin: 0px auto;
+	color: gray;
+	font-family: 'Bungee', cursive;
+}
+.display {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	width: 140px;
+	padding: 5px;
+	color: white;
+	font-family: 'Bungee', cursive;
+	font-size: 1.1em;
+	text-align:left;
+	padding-left: 15px;
+	border: 1px solid gray;
+	background-color: white;
+	background: #58a linear-gradient(#ccc, #58a);
+	/*#77a0bb*/
+}
+#points-display {
+	top: -34px;
+	left: -110px;
+}
+#howmanyleft-display {
+	width: 89px;
+	top: -67px;
+	left: 113px;
+	padding-left: 60px;
+}
