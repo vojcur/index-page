@@ -16,10 +16,12 @@
       <button type="button" disabled onclick="localStorage.removeItem('MathHiScore') ">reset High Score</button>
       <button onclick="location.reload()">reload</button>
    </div>   
-  <h1>Balloons</h1>
-   <canvas id="canvas"></canvas>
-   <span class="display" id="points-display">points: 0</span>
-   <span class="display" id="howmanyleft-display">left: </span>
+  <div id="game_frame">
+    <h1>Balloons</h1>
+    <canvas id="canvas"></canvas>
+    <span class="display" id="points-display">points: 0</span>
+    <span class="display" id="howmanyleft-display">left: </span>
+  </div>
    
   <script>
   	var displayScoreList;	 
